@@ -24,7 +24,16 @@ export default function TabLayout() {
 
   return (
     <BottomNavigation
-
+    // barStyle={{
+    //   height:50,
+    //   borderRadius: 50,
+    //   width:"80%",
+    //   display:"flex",
+    //   justifyContent:"center",
+    //   alignSelf:"center",
+    //   paddingBottom:15,
+    //   marginBottom:15,
+    // }}
     navigationState={{ index, routes }}
     onIndexChange={setIndex}
     renderScene={renderScene}

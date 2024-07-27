@@ -6,6 +6,9 @@ import { useEffect } from 'react';
 import 'react-native-reanimated';
 import { PaperProvider } from 'react-native-paper';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import {
+  RNMLKitFaceDetectionContextProvider,
+} from "@infinitered/react-native-mlkit-face-detection";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -27,7 +30,8 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <>
+      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <PaperProvider>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
@@ -35,5 +39,7 @@ export default function RootLayout() {
       </Stack>
       </PaperProvider>
     </ThemeProvider>
+    </>
+    
   );
 }
